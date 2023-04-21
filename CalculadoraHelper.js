@@ -4,29 +4,29 @@
         var b = component.get("v.number2");
         
         if(option === 'add') {
-            if(isNaN(a) || isNaN(b) || (a == null) || (b == null)) {
-                alert("Por favor, digite números válidos para os dois campos");
+            if(isNaN(a || b) || (a == '') || (b == '')) {
+                alert("Por favor, digite apenas números nos campos");
             } else {
                 return parseFloat(a) + parseFloat(b);  
             }
         }
         if(option === 'sub') {
-            if(isNaN(a) || isNaN(b) || (a == null) || (b == null)) {
-                alert("Por favor, digite números válidos para os dois campos");
+            if(isNaN(a || b) || (a == '') || (b == '')) {
+                alert("Por favor, digite apenas números nos campos");
             } else {
                 return parseFloat(a) - parseFloat(b);
             }
         }
         if(option === 'mult') {
-            if(isNaN(a) || isNaN(b) || (a == null) || (b == null)) {
-                alert("Por favor, digite números válidos para os dois campos");
+            if(isNaN(a || b) || (a == '') || (b == '')) {
+                alert("Por favor, digite apenas números nos campos");
             } else {
                 return parseFloat(a) * parseFloat(b);
             }
         }
         if(option === 'div') {
-            if(isNaN(a) || isNaN(b) || (a == null) || (b == null)) {
-                alert("Por favor, digite números válidos para os dois campos");
+            if(isNaN(a || b) || (a == '') || (b == '')) {
+                alert("Por favor, digite apenas números nos campos");
             } else if(parseFloat(b) === 0) {
                 alert("Não é possível realizar a divisão por zero");
             } else {
@@ -35,8 +35,8 @@
         }
         
         if(option === 'clear'){
-            component.set("v.number1", 0);
-            component.set("v.number2", 0);
+            component.set("v.number1", '');
+            component.set("v.number2", '');
         }
     },
     
