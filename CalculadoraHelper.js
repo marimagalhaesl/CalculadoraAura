@@ -2,30 +2,31 @@
     getResults : function(component, option) {
         var a = component.get("v.number1");
         var b = component.get("v.number2");
+        var output = component.get("v.output");
         
         if(option === 'add') {
-            if(isNaN(a || b) || (a == '') || (b == '')) {
+            if(isNaN(a && b) || (a === '') || (b === '')) {
                 alert("Por favor, digite apenas números nos campos");
             } else {
                 return parseFloat(a) + parseFloat(b);  
             }
         }
         if(option === 'sub') {
-            if(isNaN(a || b) || (a == '') || (b == '')) {
+            if(isNaN(a && b) || (a === '') || (b === '')) {
                 alert("Por favor, digite apenas números nos campos");
             } else {
                 return parseFloat(a) - parseFloat(b);
             }
         }
         if(option === 'mult') {
-            if(isNaN(a || b) || (a == '') || (b == '')) {
+            if(isNaN(a && b) || (a === '') || (b === '')) {
                 alert("Por favor, digite apenas números nos campos");
             } else {
                 return parseFloat(a) * parseFloat(b);
             }
         }
         if(option === 'div') {
-            if(isNaN(a || b) || (a == '') || (b == '')) {
+            if(isNaN(a && b) || (a === '') || (b === '')) {
                 alert("Por favor, digite apenas números nos campos");
             } else if(parseFloat(b) === 0) {
                 alert("Não é possível realizar a divisão por zero");
@@ -35,8 +36,8 @@
         }
         
         if(option === 'clear'){
-            component.set("v.number1", '');
-            component.set("v.number2", '');
+            component.set("v.number1", 0);
+            component.set("v.number2", 0);
         }
     },
     
