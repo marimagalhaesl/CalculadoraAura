@@ -2,7 +2,6 @@
     getResults : function(component, option) {
         var a = component.get("v.number1");
         var b = component.get("v.number2");
-        var output = component.get("v.output");
         
         if(option === 'add') {
             if(isNaN(a && b) || (a === '') || (b === '')) {
